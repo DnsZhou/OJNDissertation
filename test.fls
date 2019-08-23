@@ -6,21 +6,21 @@ INPUT d:/UniversityRelated/FinalDissertation/OJNDissertation/test.tex
 OUTPUT d:/UniversityRelated/FinalDissertation/OJNDissertation/test.log
 INPUT e:/Program Files/texlive/2018/texmf-dist/tex/latex/base/article.cls
 INPUT e:/Program Files/texlive/2018/texmf-dist/tex/latex/base/article.cls
-INPUT e:/Program Files/texlive/2018/texmf-dist/tex/latex/base/size12.clo
-INPUT e:/Program Files/texlive/2018/texmf-dist/tex/latex/base/size12.clo
-INPUT e:/Program Files/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map
-INPUT e:/Program Files/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT e:/Program Files/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+INPUT e:/Program Files/texlive/2018/texmf-dist/tex/latex/base/size10.clo
 INPUT d:/UniversityRelated/FinalDissertation/OJNDissertation/test.aux
 INPUT d:/UniversityRelated/FinalDissertation/OJNDissertation/test.aux
 OUTPUT d:/UniversityRelated/FinalDissertation/OJNDissertation/test.aux
-INPUT e:/Program Files/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+INPUT e:/Program Files/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT e:/Program Files/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT e:/Program Files/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT d:/UniversityRelated/FinalDissertation/OJNDissertation/test.toc
 INPUT d:/UniversityRelated/FinalDissertation/OJNDissertation/test.toc
-INPUT e:/Program Files/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT e:/Program Files/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 OUTPUT d:/UniversityRelated/FinalDissertation/OJNDissertation/test.toc
 OUTPUT d:/UniversityRelated/FinalDissertation/OJNDissertation/test.pdf
 INPUT e:/Program Files/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT d:/UniversityRelated/FinalDissertation/OJNDissertation/test.aux
+INPUT e:/Program Files/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT e:/Program Files/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-INPUT e:/Program Files/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT e:/Program Files/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
