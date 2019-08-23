@@ -108,14 +108,15 @@
 %=== Abstract ============
 %=============================
 \section*{Abstract}
-
-An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software develop-ment\cite{Integrated_development_environment}, but on certain occasions, developers want to browse all java files within an entire jar file.
+\addcontentsline{toc}{section}{Abstract}
+An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development\cite{Integrated_development_environment}, but on certain occasions, developers want to browse all java files within an entire jar file.
 
 This dissertation is mainly about the design and implements of a kind of web-based source code navigator for Java, called Online Java Navigator, which provides an online user interface for all developers to browse specific repositories of java source code. Different users can access a general server that uses a unified storage system to look up all relevant information required to resolve the navigation result. With this browser-based source code navigation system, users can view every Java file as an online web page, and click any validated type name within the page, then the system will direct them to the right target java type that is quoted by current scope.
 
 To provide service to users from all over the world, a good cloud structure is pretty crucial during both deployment stage and development stage. There are different kind of solutions to choose from. All these solutions have their advantages and disadvantages, thus an evaluation of these solutions was conducted during this project.
 
 \section*{Declaration}
+\addcontentsline{toc}{section}{Declaration}
 
 I declare that this dissertation represents my own work except where otherwise explicitly stated.
 
@@ -124,6 +125,7 @@ I declare that this dissertation represents my own work except where otherwise e
 %=== Acknowledgements ============
 %=============================
 \section*{Acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
 
 Firstly, I would like to express my thanks to Mr Jonathan Halliday and Dr Paul Ezhilchelvan for their help, advice and patient guidance during this project. I would also like to expand my gratitude to all those who have directly and indirectly guided me in writing this dissertation.
 
@@ -157,8 +159,8 @@ This dissertation is mainly about the design and implements of a kind of web-bas
 With this system, users can view every java file as an online web page, and click any validated type name within the page, then the system will direct them to the right target java type that is quoted by current scope.
 The system support user-customised classpath, which means the user can define the boundaries of browsing and navigate only within a specific scope of source code. Also, all java codes are displayed with syntax highlighting, so that users would have a better user experience while reading those codes.
 
-The system uses a non-container solution, which means it is different from the online IDE system. An online IDE uses container technology to create an individual container for each user instance so that they can browse, run and debug code remote-ly, it does help to build a robust environment for developer to use online but at the cost of a lot of resources consumed to provide service to developers from all over the world. Instead, a non-container solution uses a universal server group for any access from the internet and provide service with low cost and high efficiency.
-The product is deployed on AWS public cloud with CDN\cite{Content_delivery_network} and BLOB\cite{Binary_large_object} storage sys-tem, which means it can provide service to users from all over the world with high availability and low latency.
+The system uses a non-container solution, which means it is different from the online IDE system. An online IDE uses container technology to create an individual container for each user instance so that they can browse, run and debug code remotely, it does help to build a robust environment for developer to use online but at the cost of a lot of resources consumed to provide service to developers from all over the world. Instead, a non-container solution uses a universal server group for any access from the internet and provide service with low cost and high efficiency.
+The product is deployed on AWS public cloud with CDN\cite{Content_delivery_network} and BLOB\cite{Binary_large_object} storage system, which means it can provide service to users from all over the world with high availability and low latency.
 
 
 %=============================
@@ -166,17 +168,17 @@ The product is deployed on AWS public cloud with CDN\cite{Content_delivery_netwo
 %=============================
 \section{Background}
 
-An integrated development environment (IDE) is a software application that pro-vides comprehensive facilities to computer programmers for software develop-ment\cite{Ide_introduction}. A handy feature provided by IDE is the ability to navigate between different files so that they can conveniently navigate the Types that used in any part of codes. Currently, there are a lot of IDE that provides useful functions like that, but sometimes developers may want to browse code online as a document. For single file cases, this is some-times possible; for example, GitHub\cite{GitHub} provides an online webpage for every file in the repository, user can easily browse and edit the code. 
+An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development\cite{Ide_introduction}. A handy feature provided by IDE is the ability to navigate between different files so that they can conveniently navigate the Types that used in any part of codes. Currently, there are a lot of IDE that provides useful functions like that, but sometimes developers may want to browse code online as a document. For single file cases, this is sometimes possible; for example, GitHub\cite{GitHub} provides an online webpage for every file in the repository, user can easily browse and edit the code. 
 
-But on certain occasions, developers want to browse all java files within an entire jar file, because now software products are becoming more and more complicated, developers are trended to implement some open-source project into their product to boost their development, and these open-source products are usually packed as jar files. Within these jar files, there are a lot of java files which have internal quotes with each other, just like when you import specific java class and use it in another java class. Because of this domestic relationship between different java files, it is especial-ly useful if developers can browse all related open-source code online with navigation between different java files, just like what a local IDE can provide to users.
+But on certain occasions, developers want to browse all java files within an entire jar file, because now software products are becoming more and more complicated, developers are trended to implement some open-source project into their product to boost their development, and these open-source products are usually packed as jar files. Within these jar files, there are a lot of java files which have internal quotes with each other, just like when you import specific java class and use it in another java class. Because of this domestic relationship between different java files, it is especially useful if developers can browse all related open-source code online with navigation between different java files, just like what a local IDE can provide to users.
 
 
 \subsection{Current solutions}
-There are some existing solutions and products on the market that provide these fea-tures, which can be concluded as two types of solutions:
+There are some existing solutions and products on the market that provide these features, which can be concluded as two types of solutions:
 
 \subsubsection{Container-based solutions: Gitpod\cite{Gitpod}, SourceGraph\cite{SourceGraph}}
 
-These two products similarly provide an individual container to every user in-stances. Within the container, the system automatically builds a java develop-ment environment and integrate a front-end user interface to interact with users. When the user loads any specific project, it passes the code to the container, then compiles, build and debug it in real-time.
+These two products similarly provide an individual container to every user instances. Within the container, the system automatically builds a java development environment and integrate a front-end user interface to interact with users. When the user loads any specific project, it passes the code to the container, then compiles, build and debug it in realtime.
 
 \begin{figure}[H]
 	\centering
@@ -192,11 +194,11 @@ These two products similarly provide an individual container to every user in-st
 	\end{minipage}
 \end{figure}
 
-This kind of solution can provide the most potent online IDE to users, making it almost the same as an offline development environment. But on the other hand, it cost a lot of resources to support this type of solution, because to use the system, every user will need a complete runtime environment individually. And in terms of open-source code, the user may merely want to browse and look up the source code repository to learn how to implement that product or figure out the root cause of some defect occurred during their implementation. For this kind of user requirement, it would be to luxury to provide an entire IDE environment to users, and that would cost too much to provide service to tre-mendous of users from all over the world.
+This kind of solution can provide the most potent online IDE to users, making it almost the same as an offline development environment. But on the other hand, it cost a lot of resources to support this type of solution, because to use the system, every user will need a complete runtime environment individually. And in terms of open-source code, the user may merely want to browse and look up the source code repository to learn how to implement that product or figure out the root cause of some defect occurred during their implementation. For this kind of user requirement, it would be to luxury to provide an entire IDE environment to users, and that would cost too much to provide service to tremendous of users from all over the world.
 
 
 \subsubsection{Non-container solution: zGrepCode\cite{zgrepcode}}
-This product is almost the ideal solution for our requirement. It firstly analysis the source code and index them, then provide online access for users to browse and navigate among different java files. It does not provide any customised container to users; instead, it uses a general server to resolve all links by query-ing the index generated previously.
+This product is almost the ideal solution for our requirement. It firstly analysis the source code and index them, then provide online access for users to browse and navigate among different java files. It does not provide any customised container to users; instead, it uses a general server to resolve all links by querying the index generated previously.
 
 \begin{figure}[H]
 	\centering
@@ -205,12 +207,12 @@ This product is almost the ideal solution for our requirement. It firstly analys
 	\label{zGrepCode}
 \end{figure}
 
-But zGrepCode does not provide users with the ability to customise their own configurations and preferences. For example, user can not nominate some spe-cific version of JDK or any other open-source repository with specified version id, which makes it difficult for users to build their own scope of the repository. Developers may want a repository with java 8 and JUnit 3, if this scope is not pre-designed by zGrepCode, users will have no way to config it by them self.
+But zGrepCode does not provide users with the ability to customise their own configurations and preferences. For example, user can not nominate some specific version of JDK or any other open-source repository with specified version id, which makes it difficult for users to build their own scope of the repository. Developers may want a repository with java 8 and JUnit 3, if this scope is not pre-designed by zGrepCode, users will have no way to config it by them self.
 
 Even worse, this product has been out of service for a few months, and there is no indication whether it will be available in the future.
 
 \subsection{Compilation and execution of Java program}
-Comparing with other languages like python and JavaScript who have a lot of exist-ing tools to use, it is more challenging to implement a navigation system for java code, because of the complexity of its compilation and execution process.
+Comparing with other languages like python and JavaScript who have a lot of existing tools to use, it is more challenging to implement a navigation system for java code, because of the complexity of its compilation and execution process.
 
 \begin{figure}[H]
 	\centering
@@ -232,7 +234,7 @@ Base on the research mentioned above, this project was proposed by Red Hat, whic
 	\item The code should be efficient enough to: 
 	\begin{enumerate}
 		\item Provide cost-efficient operation of the bulk rendering component, with a time budget of 10ms per input source java file on a single CPU core.
-		\item Provide responsive user interaction for the link resolution, with a time budget of 50ms for returning a response, excluding network RTT, given a single concur-rent user on a single CPU core with 2GB memory.
+		\item Provide responsive user interaction for the link resolution, with a time budget of 50ms for returning a response, excluding network RTT, given a single concurrent user on a single CPU core with 2GB memory.
 	\end{enumerate}
 \end{enumerate}
 
@@ -242,13 +244,13 @@ Base on the research mentioned above, this project was proposed by Red Hat, whic
 %=============================
 \section{Comparative Research}
 
-There are a lot of different open-sourced projects that can help develop a browser-based source code navigation system, so before designing this project, several prod-ucts were evaluated, and a general comparison can be found as follow.
+There are a lot of different open-sourced projects that can help develop a browser-based source code navigation system, so before designing this project, several products were evaluated, and a general comparison can be found as follow.
 
 \subsection{Java Parsing}
 
 The raw java file is just a combination of characters without the process of a specific parser, so firstly it is essential to find an appropriate solution to parse the source code. 
 
-A parser is usually composed of two parts: a lexer, also known as scanner or tokeniz-er, and the proper parser. Not all parsers adopt this two-steps schema: some parsers do not depend on a lexer. They are called scannerless parsers.\cite{parsing-in-java}
+A parser is usually composed of two parts: a lexer, also known as scanner or tokenizer, and the proper parser. Not all parsers adopt this two-steps schema: some parsers do not depend on a lexer. They are called scannerless parsers.\cite{parsing-in-java}
 
 \begin{itemize}
 	\item \textbf{Lexer + Parser solution:} AnnoFlex\cite{AnnoFlex} + Antlr\cite{Antlr}
@@ -280,7 +282,7 @@ In order to prettify the code with syntax highlight and make it more similar to 
 After the comparison between all three products, it is more appropriate to integrate Code Prettify into our project to provide a syntax highlight feature.
 
 \subsection{Front-end Framework}
-This navigation system provides a browser-based user interface for the developer to access, at the same time send, receive and process information during the entire re-solving stage. Thus, a front-end framework is especially important.
+This navigation system provides a browser-based user interface for the developer to access, at the same time send, receive and process information during the entire resolving stage. Thus, a front-end framework is especially important.
 
 \begin{figure}[H]
 	\centering
@@ -305,12 +307,12 @@ According to what required in paragraph 2.3, this system should adopt a non-cont
 	\label{High level user access}
 \end{figure}
 
-But with a non-container solution, it is impossible to use JVM to resolve the symbol in real-time. Instead, different users should be able to access a general server(or server group) that uses a unified storage system to look up all relevant information required to resolve the navigation result(see Fig. 8). Thus, the navigator is designed as a two-stage system:
+But with a non-container solution, it is impossible to use JVM to resolve the symbol in realtime. Instead, different users should be able to access a general server(or server group) that uses a unified storage system to look up all relevant information required to resolve the navigation result(see Fig. 8). Thus, the navigator is designed as a two-stage system:
 
 \begin{itemize}
 	\item \textbf{Stage1: Analysis Process}
 
-	In this stage, the system scans all java codes in the .jar files within the repository, converts them into Html document. Every Java types are wrapped with hyper-link tags so that all types(classes, interfaces, annotations) within this Html file can be easily recognised by the user, and the user can click the hyperlink to request for navigation to redirect to the definition of this specific type.
+	In this stage, the system scans all java codes in the .jar files within the repository, converts them into Html document. Every Java types are wrapped with hyperlink tags so that all types(classes, interfaces, annotations) within this Html file can be easily recognised by the user, and the user can click the hyperlink to request for navigation to redirect to the definition of this specific type.
 
 	To make it possible for the server to navigate between different Java files, several supplementary documents are also generated in this stage, including explanatory JSON files and index files.
 	
@@ -330,7 +332,7 @@ But with a non-container solution, it is impossible to use JVM to resolve the sy
 	\label{UML of the system}
 \end{figure}
 
-With this architecture(Fig. 9), all source codes in the jar files are proceeded at the same time during the analysis stage and saved to the storage system, making it possible to provide a general resolving service in high efficiency and low expendi-ture.
+With this architecture(Fig. 9), all source codes in the jar files are proceeded at the same time during the analysis stage and saved to the storage system, making it possible to provide a general resolving service in high efficiency and low expenditure.
 
 %=============================
 %===5 Source code analysis====
@@ -350,7 +352,7 @@ There are several steps within the analysis stage, which can be briefly introduc
 
 The source code for a Java class is organized into compilation units, and a simple compilation unit contains a single class definition and is named for that class\cite{learningJava_2013}, so firstly, the system will read every jar file within the target repository, and process every java file(i) individually in the compilation unit thread(ii). The java code will be parsed by the parsing process(iii), then generate an AST(iv) that stores all relevant information of this java file.
 
-The AST (Abstract Syntax Tree) is a tree representation of the abstract syntactic structure of source code written in a programming lan-guage.\cite{AST_introduction} For example, “437+734” can be processed by the following steps:
+The AST (Abstract Syntax Tree) is a tree representation of the abstract syntactic structure of source code written in a programming language.\cite{AST_introduction} For example, “437+734” can be processed by the following steps:
 
 
 \begin{figure}[H]
@@ -367,7 +369,7 @@ object representation in a Java environment. More formally, it refers to this ob
 
 \subsection{AST to Html}
 
-When we got an entire AST(iv) that describe everything within specific compilation unit, the Html Printer(vi) will transform the AST(iv) into an Html file(ix), because basi-cally the AST\cite{AST_introduction}(iv)  stores everything that comes from the raw Java file. The only dif-ference is that the Html Printer[6] need to find out all the occurrence of every class and interface type that is used in within the code and then wrap it with “<a>” tag, so that these types will be displayed as hyperlinks for the user to click. See Appendix 1 for the relevant code. Also, Code Prettify\cite{code-prettify} is integrated with the Html file(ix)  generat-ed by Html Printer(vi).
+When we got an entire AST(iv) that describe everything within specific compilation unit, the Html Printer(vi) will transform the AST(iv) into an Html file(ix), because basically the AST\cite{AST_introduction}(iv)  stores everything that comes from the raw Java file. The only difference is that the Html Printer[6] need to find out all the occurrence of every class and interface type that is used in within the code and then wrap it with “<a>” tag, so that these types will be displayed as hyperlinks for the user to click. See Appendix 1 for the relevant code. Also, Code Prettify\cite{code-prettify} is integrated with the Html file(ix)  generated by Html Printer(vi).
 
 After this process, we can generate a single Html file(ix) that display all the java code from the raw java file(ii), like what is shown in the Fig. 12.
 
@@ -419,13 +421,13 @@ The Fig. 13 shows an example of a universal unique file name of a specific Java 
 Since both Html files and JSON files are saved in this path and file name, you can locate any Java type with the entire repository with these five factors.
 
 \subsection{Resolve Function}
-When user trying to navigate from specific Java file to another Java file that via the hyperlink, it should pass the UUTN of current Java file (which is regarded as “navi-gate from”) and the target type name(which is regarded as “navigate to”) to the backend server. A typical resolve request may look like this:
+When user trying to navigate from specific Java file to another Java file that via the hyperlink, it should pass the UUTN of current Java file (which is regarded as “navigate from”) and the target type name(which is regarded as “navigate to”) to the backend server. A typical resolve request may look like this:
 
 \begin{lstlisting}[language=Java, caption=Resolver example]
 Resolver.resolve(groupId, artifactId, version, compilationUnit, typeName, navTo){/*...*/}
 \end{lstlisting}
 
-The groupId, artifactId, version, compilationUnit and typeName parameter are ex-actly the UUTN of where you navigate from, and the navTo represent the String of the type name of your target.
+The groupId, artifactId, version, compilationUnit and typeName parameter are exactly the UUTN of where you navigate from, and the navTo represent the String of the type name of your target.
 
 \subsection{Priorities for Resolving}
 
@@ -475,7 +477,7 @@ According to the result of the cross-validation, there are seven steps to resolv
 	\item Find directly nominated type, e.g.,  java.util.Date date=null.
 \end{enumerate}
 
-These seven rules can help the resolver to find out the right target without Java com-piler or JVM, which gives an unobstructed water flow to resolve some specific type name into the correct target that been referred by current Type.
+These seven rules can help the resolver to find out the right target without Java compiler or JVM, which gives an unobstructed water flow to resolve some specific type name into the correct target that been referred by current Type.
 
 \subsection{User-customised classpath}
 In paragraph 6.1, we introduced UUTN(Universal Unique Type Name), which is a method that uses group id, artefact id, version, compilation unit name and type name to find any type within the system. But if you want to locate a specific jar file, you only need G(Group), A(artefact), V(version) to specify a particular version of some open-source project.
@@ -492,7 +494,7 @@ Classpath information is just a set of GAVs that defines which jar files are inc
 
 However, as was shown in Fig. 15, different users share a single server (or server group), if the server uses a general classpath file, the operation from different users may have interference with each other.
 
-To solve this problem, when the user uploads their customised classpath, the system will actually generate the hash code from the classpath, name the classpath file with this hash code and save the file into the storage system, then finally send the re-sponse back to the browser with this hash code. The front-end script will create a new item in the cookie named “classpath-hash” and save the hash code to the value.
+To solve this problem, when the user uploads their customised classpath, the system will actually generate the hash code from the classpath, name the classpath file with this hash code and save the file into the storage system, then finally send the response back to the browser with this hash code. The front-end script will create a new item in the cookie named “classpath-hash” and save the hash code to the value.
 
 \begin{figure}[H]
 	\centering
@@ -508,14 +510,14 @@ Then every time the front-end trying to resolve any link, it will bring the cook
 %=============================
 \section{Cloud Solution}
 
-To provide service to users from all over the world, a good cloud structure is pretty crucial during both deployment stage and development stage. There are different kind of solutions to choose from. All these solutions have their advantages and dis-advantages. Thus an evaluation of these solutions was conducted during this project.
+To provide service to users from all over the world, a good cloud structure is pretty crucial during both deployment stage and development stage. There are different kind of solutions to choose from. All these solutions have their advantages and disadvantages. Thus an evaluation of these solutions was conducted during this project.
 
 \subsection{EC2 + EBS}
 
 
-Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing ca-pacity in the Amazon Web Services (AWS) cloud.\cite{AWSEC2}
+Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) cloud.\cite{AWSEC2}
 
-Amazon Elastic Block Store (EBS) is an easy to use, high-performance block stor-age service designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction-intensive workloads at any scale.\cite{AWSEBS}
+Amazon Elastic Block Store (EBS) is an easy to use, high-performance block storage service designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction-intensive workloads at any scale.\cite{AWSEBS}
 
 \begin{figure}[H]
 	\centering
@@ -537,13 +539,13 @@ To examine the solution we chose a free-tier server type with one core CPU and 1
 
 This solution provided a nice performance(see paragraph 8.3-1), which is the best one among all the solutions under the performance test because EBS is a high-performance block storage service that works better than traditional hard disk.
 
-But with this solution the cost of storage may become really high, because Ama-zon EBS pricing is based on its use for high-performance workloads, it can be expen-sive for data that doesn’t require access via highly performant disks.\cite{ebs-efs-amazons3} It is also tricky for system administrator to increase the storage if there are new source code to be analysed in the repository.
+But with this solution the cost of storage may become really high, because Amazon EBS pricing is based on its use for high-performance workloads, it can be expensive for data that doesn’t require access via highly performant disks.\cite{ebs-efs-amazons3} It is also tricky for system administrator to increase the storage if there are new source code to be analysed in the repository.
 
 Another disadvantage of this solution is that we can not integrate EBS volume with CDN(Content Delivery Network)\cite{Content_delivery_network} system, which may cause a latency when global users are trying to access our system.
 
 \subsection{EC2 + S3}
 
-Amazon Simple Storage Service (Amazon S3) is an object storage service that of-fers industry-leading scalability, data availability, security, and performance.\cite{amazons3}
+Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance.\cite{amazons3}
 
 \begin{figure}[H]
 	\centering
@@ -554,11 +556,11 @@ Amazon Simple Storage Service (Amazon S3) is an object storage service that of-f
 
 With this solution, all data were stored in S3 bucket, and the program within EC2 instances access S3 directly to retrieve relevant data. 
 
-Since S3 can be easily integrated with CDN service, this solution can ensure the ac-cessibility are equally from all over the world. 
+Since S3 can be easily integrated with CDN service, this solution can ensure the accessibility are equally from all over the world. 
 
 But actually, the cost of this solution may increase exponential, because of the pricing rules of S3 product. (see Appendix 3) It not only charges for storage but also charges for requests that exchanged with S3 bucket, no matter the request comes from EC2(internal AWS network) or from user browser.
 
-Another problem of S3 solution is about the performance, the access from EC2 to S3 is actually worse than the access to EBS(see paragraph 8.3), because EBS is di-rectly attached to EC2, and for S3 there are a lot of validation rules which cost more time than EBS.
+Another problem of S3 solution is about the performance, the access from EC2 to S3 is actually worse than the access to EBS(see paragraph 8.3), because EBS is directly attached to EC2, and for S3 there are a lot of validation rules which cost more time than EBS.
 
 \subsection{Lambda + API Gateway + S3}
 Another popular solution is the serverless architecture that using API Gateway\cite{api-gateway} to accept Http requests and redirect to AWS Lambda\cite{lambda} service to process and interact with the S3 storage system.
@@ -603,9 +605,9 @@ As is presented in Fig. 21, there are different steps to finish the entire proce
 
 If all EC2 instances are under high capacity, the auto-scaling group will initialise another EC2 instance and connect it to the load balancer, which makes sure that every user can access the system with highest accessibility.
 
-To enable this kind of auto-scaling structure, the system is required to be designed as a stateless program. Every time a user resolve any type in our system, the re-quest send to backend actually have everything needed for resolver to get the re-sult, which means every request is independent with each other.
+To enable this kind of auto-scaling structure, the system is required to be designed as a stateless program. Every time a user resolve any type in our system, the request send to backend actually have everything needed for resolver to get the result, which means every request is independent with each other.
 
-Also, with this structure, the number of access request from EC2 to S3 are mini-mised. With the EC2 + S3 solution introduced in paragraph 7.2, for every request there will have at most three get request directed to S3 bucket, which is retrieving the JSON file, the index file and the Html file. With Hybrid solution, the only re-quest to S3 bucket is the get request for Html file from user browser, which means the amount of the request has been reduced by two-thirds. As we discussed in paragraph 7.2, the access to S3 is actually slower than the access to EBS, so this hybrid solution obviously improves the performance of this system(see paragraph 8.3 for the testing result).
+Also, with this structure, the number of access request from EC2 to S3 are minimised. With the EC2 + S3 solution introduced in paragraph 7.2, for every request there will have at most three get request directed to S3 bucket, which is retrieving the JSON file, the index file and the Html file. With Hybrid solution, the only request to S3 bucket is the get request for Html file from user browser, which means the amount of the request has been reduced by two-thirds. As we discussed in paragraph 7.2, the access to S3 is actually slower than the access to EBS, so this hybrid solution obviously improves the performance of this system(see paragraph 8.3 for the testing result).
 
 On the other hand, since AWS charge the S3 service by the amount of the request that sends to S3, this hybrid solution saves many budgets and at the same time achieves even better performance.
 
@@ -627,12 +629,12 @@ Different type of test cases was designed to cover as much code as possible. In 
 	\label{Coverage analysis of the test cases}
 \end{figure}
 
-During the development stage of the project, these test cases also worked as a kind of regression test. Regression testing is re-running functional and non-functional tests to ensure that previously developed, and tested software still performs after a change.\cite{basu2015software} Since different functions are developed separately, and different functions may have internal relationship with each other, it is especially important to make sure that new-ly developed functions do not ruin any existing function in the system.
+During the development stage of the project, these test cases also worked as a kind of regression test. Regression testing is re-running functional and non-functional tests to ensure that previously developed, and tested software still performs after a change.\cite{basu2015software} Since different functions are developed separately, and different functions may have internal relationship with each other, it is especially important to make sure that newly developed functions do not ruin any existing function in the system.
 
 \subsection{Automation Testing}
 Since this navigator generates links for every Type that occurred in the java code, it is important to know how much links can be resolved appropriately, which can reflect the accuracy of the resolving system.
 
-Thus an automation testing program was developed for this product. As what is shown in the Fig. 10 in paragraph 5, the AST was generated by parsing process and contained all relevant information of the source code, so the server also produced a list of test cas-es that describe every available link as G,A,V,Cu,TypeName and NavigateTo, and save them into CSV files.
+Thus an automation testing program was developed for this product. As what is shown in the Fig. 10 in paragraph 5, the AST was generated by parsing process and contained all relevant information of the source code, so the server also produced a list of test cases that describe every available link as G,A,V,Cu,TypeName and NavigateTo, and save them into CSV files.
 
 In the Junit test folder, there is a testing program that loads all the test cases and passes it to resolving function, so that it can cover every link in the system and test them automatically.
 
@@ -686,7 +688,7 @@ When the entire storage system was moved to S3, the performance became much wors
     \label{Result of 20 thread performance testing with Hybrid solution}
 \end{figure}
 
-With a hybrid solution, the average response time was 49 ms, similar to the EBS solu-tion. The throughput was 179.292 transactions per second, a little bit less than EBS solution, but much better than the S3 solution.
+With a hybrid solution, the average response time was 49 ms, similar to the EBS solution. The throughput was 179.292 transactions per second, a little bit less than EBS solution, but much better than the S3 solution.
 
 \subsubsection{High capacity testing}
 To examine the performance of the product under a higher capacity, another test plan was executed to both EBS solution and EBS + S3 hybrid solution.
@@ -718,7 +720,7 @@ With higher capacity, both these two solutions work similarly. The Hybrid soluti
 \subsection{Project Management}
 Although this project was conducted by one person only, it is still important to adopt an appropriate methodology that helps to manage the entire development process.
 
-Traditional develop team take waterfall\cite{Waterfall_model} model to manage the development life-cycle so that they can clearly research, design, develop, test and deploy the product in separate stages. This model makes the develop progress tracked explicitly, but with the development of software engineering, it takes less time to develop software prod-ucts. On the other hand, the requirement of the software product is frequently chang-ing, which is almost a disaster to traditional waterfall model.
+Traditional develop team take waterfall\cite{Waterfall_model} model to manage the development life-cycle so that they can clearly research, design, develop, test and deploy the product in separate stages. This model makes the develop progress tracked explicitly, but with the development of software engineering, it takes less time to develop software products. On the other hand, the requirement of the software product is frequently changing, which is almost a disaster to traditional waterfall model.
 
 While Scrum\cite{Scrum} model is such a kind of methodology that was designed to follow up the changing market. In this project, we use a professional tool, Jira\cite{jira}, to help track and manage the entire development plan.
 
@@ -739,19 +741,34 @@ In this project, there was four separate sprint which achieved different goals a
 
 The most crucial benefit of apply Scrum methodology comes from the flexibility of Scrum. During the project, every two weeks were regarded as an individual sprint, and after each sprint you can think over the entire project and modify the goal and tasks of next sprint. 
 
-For example, before the start of the project there was another sprint which aimed to deliver some edge feature like function navigation, but after sprint 2 it is deter-mined that the type navigation function spent more effort than expected, in order to deliver the entire product on time, the scope and the sprint target was modified, and some features were discarded. If we adopted waterfall model, there would have no room to alter the scope after we started the project.
+For example, before the start of the project there was another sprint which aimed to deliver some edge feature like function navigation, but after sprint 2 it is determined that the type navigation function spent more effort than expected, in order to deliver the entire product on time, the scope and the sprint target was modified, and some features were discarded. If we adopted waterfall model, there would have no room to alter the scope after we started the project.
 	
 %=============================
 %===   9 Conclusion   ====
 %=============================
 \section{Conclusion}
+This project finished with the Online Java Navigator been developed and deployed to AWS successfully, and 97.12\% of the links can be resolved, according to the automation test. There are a lot of significance and contributions achieved from this project, and also there are rooms for future improvements.
 
 \subsection{Significance and Contribution}
+This project delivered precisely what Red Hat customer want, an exclusive web-based source code navigator with a configurable classpath for the user to use.  Currently, it is the only open-source product that providing service to all developers.
+
+The optimized cloud solution with both EBS and S3 make it possible to provide service to as many users as possible and at the same time, reduce as much cost of cloud services as possible.
+
+The two-stage structure of the system makes it easy to integrate the system with any other code repository. You can easily change the result of the resolving from S3 bucket to any repository link like GitHub, and then it can leverage any existing Java code browsing system with the ability to navigate from different types.
 
 \subsection{Limitation and defects}
+The time limit was the most significant problem because it takes much time to understand the requirement, research on different technology, develop the software product and debug it. Thus a lot of useful features, such as method navigation and integration with the third-party website, was discarded due to the limitation of the time.
+
+Another limitation was the lack of knowledge and experience on Computational linguistics and the mechanism of Java compiling. It took much time to understand those basic concepts and theory and apply them into practice.
+
+Also, due to some defect from the open-source product we use like Java Parser, there may have some defects that difficult to fix. 
 
 \subsection{Future improvements}
+There are still some defects within the system, so firstly we will try to fix them in the following versions.
 
+Also, a lot of useful functions will be developed, such as directly upload local ".classpath" file from Eclipse and load it to our system.
+
+Last but not least, the parsing and resolving algorithms will be improved to provide better performance to the user.
 
 
 \newpage
@@ -759,7 +776,8 @@ For example, before the start of the project there was another sprint which aime
 \bibliography{reference}
 
 \newpage
-\section{Appendix 1: Relavant source code }
+\section*{Appendix 1: Relavant source code }
+\addcontentsline{toc}{section}{Appendix 1: Relavant source code}
 
 \begin{lstlisting}[language=Java, caption=Retrieve all occurrence of class and interface type during visiting]
 //uk.ac.ncl.cs.tongzhou.navigator.LinkinVisitor.java
@@ -1016,7 +1034,8 @@ if (GENERATE_TEST_CASES && linkObjectListInCurrentCu != null && !linkObjectListI
 \end{lstlisting}
 
 \newpage
-\section{Appendix 2: EBS Pricing}
+\section*{Appendix 2: EBS Pricing}
+\addcontentsline{toc}{section}{Appendix 2: EBS Pricing}
 
 \begin{figure}[H]
     \centering
@@ -1026,7 +1045,8 @@ if (GENERATE_TEST_CASES && linkObjectListInCurrentCu != null && !linkObjectListI
 \end{figure}
 
 \newpage
-\section{Appendix 3: S3 Pricing}
+\section*{Appendix 3: S3 Pricing}
+\addcontentsline{toc}{section}{Appendix 3: S3 Pricing}
 
 \begin{figure}[H]
     \centering

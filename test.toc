@@ -1,4 +1,0 @@
-\contentsline {section}{About this Article}{1}% 
-\contentsline {section}{About this Author}{1}% 
-\contentsline {section}{\numberline {1}First Step}{1}% 
-\contentsline {section}{\numberline {2}Second Step}{1}% 
