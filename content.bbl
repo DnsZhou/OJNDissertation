@@ -1,0 +1,163 @@
+\begin{thebibliography}{10}
+
+\bibitem{AST_introduction}
+Abstract syntax tree.
+\newblock \url{https://en.wikipedia.org/wiki/Abstract_syntax_tree}.
+
+\bibitem{api-gateway}
+Amazon api gateway.
+\newblock \url{https://aws.amazon.com/api-gateway/}.
+
+\bibitem{amazons3}
+Amazon s3.
+\newblock \url{https://aws.amazon.com/s3/}.
+
+\bibitem{AnnoFlex}
+Annoflex.
+\newblock \url{https://tomassetti.me/parsing-in-java/}.
+
+\bibitem{Antlr}
+Antlr.
+\newblock \url{https://tomassetti.me/parsing-in-java/}.
+
+\bibitem{Apache_JMeter}
+Apache jmeter.
+\newblock \url{https://en.wikipedia.org/wiki/Apache_JMeter}.
+
+\bibitem{AWSEBS}
+Aws ebs.
+\newblock \url{https://aws.amazon.com/ebs/}.
+
+\bibitem{aws-ebs-pricing}
+Aws ebs pricing.
+\newblock \url{https://n2ws.com/blog/ebs-snapshot/aws-ebs-pricing-hdd-and-ssd}.
+
+\bibitem{AWSEC2}
+Aws ec2.
+\newblock
+  \url{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html}.
+
+\bibitem{lambda}
+Aws lambda.
+\newblock \url{https://aws.amazon.com/lambda/}.
+
+\bibitem{aws-s3-costs}
+Aws s3 costs to save.
+\newblock
+  \url{https://blog.cloudability.com/aws-s3-understanding-cloud-storage-costs-to-save/}.
+
+\bibitem{Binary_large_object}
+Binary large object(blob).
+\newblock \url{https://en.wikipedia.org/wiki/Binary_large_object}.
+
+\bibitem{code-prettify}
+Code prettify.
+\newblock \url{https://github.com/google/code-prettify}.
+
+\bibitem{codemirror}
+Codemirror.
+\newblock \url{http://codemirror.net/}.
+
+\bibitem{Content_delivery_network}
+Content delivery network.
+\newblock \url{https://en.wikipedia.org/wiki/Content_delivery_network}.
+
+\bibitem{Continuous_integration}
+Continuous integration.
+\newblock \url{https://en.wikipedia.org/wiki/Continuous_integration}.
+
+\bibitem{ebs-efs-amazons3}
+Ebs, efs, s3: Best cloud storage system.
+\newblock
+  \url{https://cloud.netapp.com/blog/ebs-efs-amazons3-best-cloud-storage-system}.
+
+\bibitem{java-execution-process}
+Execution process of java program in detail.
+\newblock \url{http://bit.ly/2TWxqkF}.
+
+\bibitem{GitHub}
+Git hub.
+\newblock \url{https://github.com}.
+
+\bibitem{Ide_introduction}
+Integrated development environment(ide).
+\newblock
+  \url{https://en.wikipedia.org/wiki/Integrated_development_environment}.
+
+\bibitem{Integrated_development_environment}
+Integrated evelopment environment.
+\newblock
+  \url{https://en.wikipedia.org/wiki/Integrated_development_environment}.
+
+\bibitem{Gitpod}
+Introduction of gitpod.
+\newblock \url{https://www.gitpod.io/about/}.
+
+\bibitem{SourceGraph}
+Introduction of sourcegraph.
+\newblock \url{https://about.sourcegraph.com}.
+
+\bibitem{JavaParser}
+Javaparser.
+\newblock \url{https://javaparser.org/}.
+
+\bibitem{jira}
+Jira software.
+\newblock \url{https://www.atlassian.com/software/jira}.
+
+\bibitem{parsing-in-java}
+Parsing in java.
+\newblock \url{https://tomassetti.me/parsing-in-java/}.
+
+\bibitem{ojn-releases}
+Releases of online java navigator.
+\newblock \url{https://github.com/DnsZhou/online-Java-navigator/releases}.
+
+\bibitem{Scrum}
+Scrum (software development).
+\newblock \url{https://en.wikipedia.org/wiki/Scrum_(software_development)}.
+
+\bibitem{performance_testing}
+Software performance testing.
+\newblock \url{https://en.wikipedia.org/wiki/Software_performance_testing}.
+
+\bibitem{syntaxhighlighter}
+Syntax highlighter.
+\newblock \url{https://github.com/syntaxhighlighter/syntaxhighlighter}.
+
+\bibitem{Waterfall_model}
+Waterfall model.
+\newblock \url{https://en.wikipedia.org/wiki/Waterfall_model}.
+
+\bibitem{zgrepcode}
+zgrepcode.
+\newblock \url{https://zgrepcode.com/}.
+
+\bibitem{basu2015software}
+Anirban Basu.
+\newblock {\em Software quality assurance, testing and metrics}.
+\newblock PHI Learning Pvt. Ltd., 2015.
+
+\bibitem{learningJava_2013}
+Patrick~Niemeyer Daniel~Leuck.
+\newblock {\em Learning Java, 4th Edition}.
+\newblock O'Reilly Media, Inc., 2013.
+
+\bibitem{halili2008jemeter}
+Emily~H Halili.
+\newblock {\em Apache JMeter: A practical beginner's guide to automated testing
+  and performance measurement for your websites}.
+\newblock Packt Publishing Ltd, 2008.
+
+\bibitem{huizinga2007automated}
+Dorota Huizinga and Adam Kolawa.
+\newblock {\em Automated defect prevention: best practices in software
+  management}.
+\newblock John Wiley \& Sons, 2007.
+
+\bibitem{smith_javaparser:_2016}
+Nicholas Smith, Danny~van Bruggen, and Federico Tomassetti.
+\newblock {\em {JavaParser}: {Visited}}.
+\newblock Leanpub, November 2016.
+
+\end{thebibliography}
