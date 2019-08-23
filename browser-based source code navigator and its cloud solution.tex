@@ -113,7 +113,7 @@ An integrated development environment (IDE) is a software application that provi
 
 This dissertation is mainly about the design and implements of a kind of web-based source code navigator for Java, called Online Java Navigator, which provides an online user interface for all developers to browse specific repositories of java source code. Different users can access a general server that uses a unified storage system to look up all relevant information required to resolve the navigation result. With this browser-based source code navigation system, users can view every Java file as an online web page, and click any validated type name within the page, then the system will direct them to the right target java type that is quoted by current scope.
 
-To provide service to users from all over the world, a good cloud structure is pretty crucial during both deployment stage and development stage. There are different kind of solutions to choose from. All these solutions have their advantages and disadvantages, thus an evaluation of these solutions was conducted during this project.
+To provide service to users from all over the world, a good cloud structure is pretty crucial during both deployment stage and development stage. There are different kind of solutions to choose from, and all these solutions have their advantages and disadvantages, thus an evaluation of these solutions was conducted during this project.
 
 \section*{Declaration}
 \addcontentsline{toc}{section}{Declaration}
@@ -131,7 +131,7 @@ Firstly, I would like to express my thanks to Mr Jonathan Halliday and Dr Paul E
 
 Also, I would like to express my gratitude to my lecturers during the entire MSc programme: Dr Paul Ezhilchelvan, Dr Ellis Solaiman, Dr Stephen McGough,  Dr Nigel Thomas,  Professor Raj Ranjan,  Dr Yu Guan, Dr Paolo Missier. There were so much useful knowledge and information I achieved from those lectures, which benefits me a lot both academically and practically.
 
-Completing this project was so much different from any of my previous project because this was an industrial student project which requires for both academic knowledge and engineering practice, and this project benefited me a lot during the past four months.
+This project was so much different from any of my previous project because this was an industrial student project which requires for both academic knowledge and engineering practice, and this project benefited me a lot during the past four months.
 
 Finally, I would like to thank the Newcastle University and Red Hat Ltd in general, for all kinds of support from academic materials to facility resources during my project.
 
@@ -147,7 +147,7 @@ Finally, I would like to thank the Newcastle University and Red Hat Ltd in gener
 %=============================
 \section{Introduction}
 
-This dissertation is mainly about the design and implements of a kind of web-based source code navigator for Java, called \textbf{Online Java Navigator}, which provides an online user interface for all developers to browse specific repositories of java source code.
+This dissertation is mainly about the design and implements of a web-based source code navigator for Java, called \textbf{Online Java Navigator}\cite{ojn-Repository}, which provides an online user interface for all developers to browse specific repositories of java source code.
 
 \begin{figure}[H]
 	\centering
@@ -162,6 +162,10 @@ The system support user-customised classpath, which means the user can define th
 The system uses a non-container solution, which means it is different from the online IDE system. An online IDE uses container technology to create an individual container for each user instance so that they can browse, run and debug code remotely, it does help to build a robust environment for developer to use online but at the cost of a lot of resources consumed to provide service to developers from all over the world. Instead, a non-container solution uses a universal server group for any access from the internet and provide service with low cost and high efficiency.
 The product is deployed on AWS public cloud with CDN\cite{Content_delivery_network} and BLOB\cite{Binary_large_object} storage system, which means it can provide service to users from all over the world with high availability and low latency.
 
+You can access the demo environment of this project via this link: 
+
+http://bit.ly/2T5ODrx
+
 
 %=============================
 %===      2	Background      ====
@@ -170,7 +174,7 @@ The product is deployed on AWS public cloud with CDN\cite{Content_delivery_netwo
 
 An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development\cite{Ide_introduction}. A handy feature provided by IDE is the ability to navigate between different files so that they can conveniently navigate the Types that used in any part of codes. Currently, there are a lot of IDE that provides useful functions like that, but sometimes developers may want to browse code online as a document. For single file cases, this is sometimes possible; for example, GitHub\cite{GitHub} provides an online webpage for every file in the repository, user can easily browse and edit the code. 
 
-But on certain occasions, developers want to browse all java files within an entire jar file, because now software products are becoming more and more complicated, developers are trended to implement some open-source project into their product to boost their development, and these open-source products are usually packed as jar files. Within these jar files, there are a lot of java files which have internal quotes with each other, just like when you import specific java class and use it in another java class. Because of this domestic relationship between different java files, it is especially useful if developers can browse all related open-source code online with navigation between different java files, just like what a local IDE can provide to users.
+On certain occasions, developers want to browse all java files within an entire jar file, because now software products are becoming more and more complicated, developers are trended to implement some open-source project into their product to boost their development, and these open-source products are usually packed as jar files. Within these jar files, there are a lot of java files which have internal quotes with each other, just like when you import specific java class and use it in another java class. Because of this domestic relationship between different java files, it is especially useful if developers can browse all related open-source code online with navigation between different java files, just like what a local IDE can provide to users.
 
 
 \subsection{Current solutions}
@@ -212,7 +216,7 @@ But zGrepCode does not provide users with the ability to customise their own con
 Even worse, this product has been out of service for a few months, and there is no indication whether it will be available in the future.
 
 \subsection{Compilation and execution of Java program}
-Comparing with other languages like python and JavaScript who have a lot of existing tools to use, it is more challenging to implement a navigation system for java code, because of the complexity of its compilation and execution process.
+Other languages like Python and JavaScript have a lot of existing tools to use. How ever, there are not many tools providing a similar function for Java, because it is more challenging to implement a navigation system for java code, because of the complexity of its compilation and execution process.
 
 \begin{figure}[H]
 	\centering
@@ -221,7 +225,7 @@ Comparing with other languages like python and JavaScript who have a lot of exis
 	\label{Execution process of Java program in detail}
 \end{figure}
 
-Two processes working individually, which is the compiled time and run time. In each process, the original java code is processed separately with different rules, and the behaviour of type navigation that presented to the user is a combination of the result from both processes. If we want to implement a source code navigation system without compile time and run time, a general rule for navigation is required to build this system, but currently, there is no relevant research that purposed such kind of general rules.
+There are two processes working individually, which is the compiled time and run time. In each process, the original java code is processed separately with different rules, and the behaviour of type navigation that presented to the user is a combination of the result from both processes. If we want to implement a source code navigation system without compile time and run time, a general rule for navigation is required to build this system, but currently, there is no relevant research that purposed such kind of general rules.
 
 \subsection{General requirement}
 Base on the research mentioned above, this project was proposed by Red Hat, which aimed to develop a browser-based source code navigation system for open-source developers and their customers. This navigation system should meet the following requirements:
@@ -248,7 +252,7 @@ There are a lot of different open-sourced projects that can help develop a brows
 
 \subsection{Java Parsing}
 
-The raw java file is just a combination of characters without the process of a specific parser, so firstly it is essential to find an appropriate solution to parse the source code. 
+Without the process of a specific parser, the raw java file is just a combination of characters, so firstly it is essential to find an appropriate solution to parse the source code. 
 
 A parser is usually composed of two parts: a lexer, also known as scanner or tokenizer, and the proper parser. Not all parsers adopt this two-steps schema: some parsers do not depend on a lexer. They are called scannerless parsers.\cite{parsing-in-java}
 
@@ -261,7 +265,7 @@ A parser is usually composed of two parts: a lexer, also known as scanner or tok
 
 	\item \textbf{CFG(Context-free grammars) solution:} Antlr\cite{Antlr}
 
-	These solutions are widely used to generate parsers. You can define your own grammar and use it to create a parser that works for it. It is a basic low-level tool, but for our project, the language is predefined to use Java only, so there is no need to spend a lot of effort on creating our own parser.
+	This kind of solution is widely used to generate parsers. You can define your own grammar and use it to create a parser that works for it. It is a basic low-level tool, but for our project, the language is predefined for Java only, so there is no need to spend a lot of effort on creating our own parser.
 
 	\item \textbf{PEG(Parsing Expression Grammar) solution:} JavaParser\cite{JavaParser}
 
@@ -339,7 +343,7 @@ With this architecture(Fig. 9), all source codes in the jar files are proceeded 
 %=============================
 \section{Source code analysis}
 
-There are several steps within the analysis stage, which can be briefly introduced with Fig. 10.
+There are several steps within the analysis stage, which can be briefly introduced by Fig. 10.
 
 \begin{figure}[H]
 	\centering
@@ -389,7 +393,7 @@ The JSON Generator(v) is a function that retrieves type declarations, import dec
 \subsection{AST to Index file}
 If we want to resolve specific link that contains the target type name, we need to generate an index system that works as a dictionary to help the resolver know how much possible targets are there in the entire repository. So within the analysis stage of every compilation unit thread(i), the type collector(vii) will retrieve full qualified type name from the type declaration in the AST(iv) and save it to a hash map in the index cache(x).
 
-After all jar files have been analysed, the system will iterate every item in the cache and save them into different index file named with the type name. See Appendix for the relevant code.
+After all jar files have been analysed, the system will iterate every item in the cache and save them into different index file named with the type name. See Appendix 1 for the relevant code.
 
 %=============================
 %===     6 Navigation     ====
@@ -399,7 +403,7 @@ After all jar files have been analysed, the system will iterate every item in th
 After we analysis all Java files within the repository, the system should be available to provide a navigation service for front-end browser to redirect between different pages.
 
 \subsection{Universal Unique Type Name(UUTN)}
-It is possible that two different java files from different jar files share the same fully qualified type name. For example, “java.lang.String” may come from source code of both Java12 and Java8. In order to navigate between different java files, we need to design a file storage system that copes with the co-existence of the Java files from different versions of source code.
+It is possible that two different java files from different jar files share the same fully qualified type name. For example, “java.lang.String” may come from source code of either Java12 or Java8. In order to navigate between different java files, we need to design a file storage system that copes with the co-existence of the Java files from different versions of source code.
 
 \begin{figure}[H]
 	\centering
@@ -431,7 +435,7 @@ The groupId, artifactId, version, compilationUnit and typeName parameter are exa
 
 \subsection{Priorities for Resolving}
 
-As what is mentioned in paragraph 2.2, there is no existing research defines a general rule of how to resolve the type name and navigate to the right target Java type that is quoted by current scope. Thus a cross-validation test was conducted to all different kinds of references.
+As what was mentioned in paragraph 2.2, there is no existing research defines a general rule of how to resolve the type name and navigate to the right target Java type that is quoted by current scope. Thus a cross-validation test was conducted to all different kinds of references.
 
 This test is designed some cases with different type with same type name but imported differently. For example, in Listing 1.2, we explicitly imported class Type from package org.myproj, and at the same time declared a nested type named Test as well, then we compile and run the code to figure out which class is actually used by current type. 
 
@@ -477,7 +481,7 @@ According to the result of the cross-validation, there are seven steps to resolv
 	\item Find directly nominated type, e.g.,  java.util.Date date=null.
 \end{enumerate}
 
-These seven rules can help the resolver to find out the right target without Java compiler or JVM, which gives an unobstructed water flow to resolve some specific type name into the correct target that been referred by current Type.
+These seven rules can help the resolver to find out the right target without Java compiler or JVM, which gives an unobstructed waterflow to resolve some specific type name into the correct target that been referred by current Type.
 
 \subsection{User-customised classpath}
 In paragraph 6.1, we introduced UUTN(Universal Unique Type Name), which is a method that uses group id, artefact id, version, compilation unit name and type name to find any type within the system. But if you want to locate a specific jar file, you only need G(Group), A(artefact), V(version) to specify a particular version of some open-source project.
@@ -576,7 +580,6 @@ AWS Lambda lets you run code without provisioning or managing servers. You pay o
 
 Although Lambda supports a lot of different programming language, it does not work perfectly with Java code. You can not debug Java code online like Node.js or other supported languages, and the platform support only Java version 8, while our project was developed with Java12.
 
-
 Also, it is challenging to apply CI(Continuous Integration)\cite{Continuous_integration} tools to Lambda services because all the codes are separately in different Lambda functions.
 
 \subsection{EC2 + EBS + S3}
@@ -620,7 +623,7 @@ On the other hand, since AWS charge the S3 service by the amount of the request 
 
 Unit testing is a software testing method by which individual units of source code, sets of one or more computer program modules together with associated control data, usage procedures, and operating procedures, are tested to determine whether they are fit for use.\cite{huizinga2007automated} Junit tool was integrated into this project to perform unit testing and integrate testing during the development stage.
 
-Different type of test cases was designed to cover as much code as possible. In Fig. 22 it shows the coverage of the code that was involved by Junit test cases, and most of those core classes that marked in blue were covered in a high percentage.
+Different type of test cases was designed to cover as much code as possible. In Fig. 22 it shows the coverage of the code that was involved by Junit test cases, and most of those core classes that marked in blue were covered in a high coverage.
 
 \begin{figure}[H]
 	\centering
@@ -741,7 +744,7 @@ In this project, there was four separate sprint which achieved different goals a
 
 The most crucial benefit of apply Scrum methodology comes from the flexibility of Scrum. During the project, every two weeks were regarded as an individual sprint, and after each sprint you can think over the entire project and modify the goal and tasks of next sprint. 
 
-For example, before the start of the project there was another sprint which aimed to deliver some edge feature like function navigation, but after sprint 2 it is determined that the type navigation function spent more effort than expected, in order to deliver the entire product on time, the scope and the sprint target was modified, and some features were discarded. If we adopted waterfall model, there would have no room to alter the scope after we started the project.
+For example, before the start of the project, we designed another sprint which aimed to deliver some edge feature like function navigation, but after sprint 2 we found that the type navigation function spent more effort than expected. In order to deliver the entire product on time, the scope and the sprint target was modified, and some edge features were discarded. If we adopted waterfall model, there would have no room to alter the scope after we started the project.
 	
 %=============================
 %===   9 Conclusion   ====

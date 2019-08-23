@@ -1,0 +1,46 @@
+\contentsline {section}{Abstract}{ii}% 
+\contentsline {section}{Declaration}{ii}% 
+\contentsline {section}{Acknowledgements}{iii}% 
+\contentsline {section}{\numberline {1}Introduction}{1}% 
+\contentsline {section}{\numberline {2}Background}{2}% 
+\contentsline {subsection}{\numberline {2.1}Current solutions}{2}% 
+\contentsline {subsubsection}{Container-based solutions: Gitpod\cite {Gitpod}, SourceGraph\cite {SourceGraph}}{2}% 
+\contentsline {subsubsection}{Non-container solution: zGrepCode\cite {zgrepcode}}{3}% 
+\contentsline {subsection}{\numberline {2.2}Compilation and execution of Java program}{4}% 
+\contentsline {subsection}{\numberline {2.3}General requirement}{5}% 
+\contentsline {section}{\numberline {3}Comparative Research}{5}% 
+\contentsline {subsection}{\numberline {3.1}Java Parsing}{5}% 
+\contentsline {subsection}{\numberline {3.2}Syntax Highlight}{6}% 
+\contentsline {subsection}{\numberline {3.3}Front-end Framework}{7}% 
+\contentsline {section}{\numberline {4}High-level Architecture}{8}% 
+\contentsline {section}{\numberline {5}Source code analysis}{10}% 
+\contentsline {subsection}{\numberline {5.1}Source code to AST}{11}% 
+\contentsline {subsection}{\numberline {5.2}AST to Html}{12}% 
+\contentsline {subsection}{\numberline {5.3}AST to JSON file}{12}% 
+\contentsline {subsection}{\numberline {5.4}AST to Index file}{13}% 
+\contentsline {section}{\numberline {6}Navigation}{13}% 
+\contentsline {subsection}{\numberline {6.1}Universal Unique Type Name(UUTN)}{13}% 
+\contentsline {subsection}{\numberline {6.2}Resolve Function}{14}% 
+\contentsline {subsection}{\numberline {6.3}Priorities for Resolving}{14}% 
+\contentsline {subsection}{\numberline {6.4}User-customised classpath}{16}% 
+\contentsline {section}{\numberline {7}Cloud Solution}{17}% 
+\contentsline {subsection}{\numberline {7.1}EC2 + EBS}{17}% 
+\contentsline {subsection}{\numberline {7.2}EC2 + S3}{19}% 
+\contentsline {subsection}{\numberline {7.3}Lambda + API Gateway + S3}{20}% 
+\contentsline {subsection}{\numberline {7.4}EC2 + EBS + S3}{20}% 
+\contentsline {section}{\numberline {8}Evaluation}{22}% 
+\contentsline {subsection}{\numberline {8.1}Unit Testing \& Integrate Testing}{22}% 
+\contentsline {subsection}{\numberline {8.2}Automation Testing}{23}% 
+\contentsline {subsection}{\numberline {8.3}Performance Testing}{23}% 
+\contentsline {subsubsection}{EC2 + EBS solution}{24}% 
+\contentsline {subsubsection}{EC2 + S3 solution}{24}% 
+\contentsline {subsubsection}{EC2 + EBS + S3 hybrid solution}{25}% 
+\contentsline {subsubsection}{High capacity testing}{25}% 
+\contentsline {subsection}{\numberline {8.4}Project Management}{26}% 
+\contentsline {section}{\numberline {9}Conclusion}{28}% 
+\contentsline {subsection}{\numberline {9.1}Significance and Contribution}{28}% 
+\contentsline {subsection}{\numberline {9.2}Limitation and defects}{28}% 
+\contentsline {subsection}{\numberline {9.3}Future improvements}{29}% 
+\contentsline {section}{Appendix 1: Relavant source code}{32}% 
+\contentsline {section}{Appendix 2: EBS Pricing}{40}% 
+\contentsline {section}{Appendix 3: S3 Pricing}{41}% 

@@ -1,9 +1,10 @@
 This is BibTeX, Version 0.99d (TeX Live 2018/W32TeX)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
-The top-level auxiliary file: content.aux
+The top-level auxiliary file: browser-based source code navigator and its cloud solution.aux
 The style file: plain.bst
 Database file #1: reference.bib
 Warning--to sort, need author or key in Integrated_development_environment
+Warning--to sort, need author or key in ojn-Repository
 Warning--to sort, need author or key in Content_delivery_network
 Warning--to sort, need author or key in Binary_large_object
 Warning--to sort, need author or key in Ide_introduction
@@ -35,45 +36,45 @@ Warning--to sort, need author or key in jira
 Warning--to sort, need author or key in ojn-releases
 Warning--to sort, need author or key in aws-ebs-pricing
 Warning--to sort, need author or key in aws-s3-costs
-You've used 37 entries,
+You've used 38 entries,
             2118 wiz_defined-function locations,
-            629 strings with 7278 characters,
-and the built_in function-call counts, 6290 in all, are:
-= -- 583
-> -- 84
+            633 strings with 7476 characters,
+and the built_in function-call counts, 6449 in all, are:
+= -- 598
+> -- 85
 < -- 0
-+ -- 53
++ -- 54
 - -- 16
-* -- 217
-:= -- 763
-add.period$ -- 79
-call.type$ -- 37
-change.case$ -- 114
+* -- 222
+:= -- 780
+add.period$ -- 81
+call.type$ -- 38
+change.case$ -- 117
 chr.to.int$ -- 0
-cite$ -- 69
-duplicate$ -- 284
-empty$ -- 847
+cite$ -- 71
+duplicate$ -- 291
+empty$ -- 870
 format.name$ -- 16
-if$ -- 1530
+if$ -- 1570
 int.to.chr$ -- 0
-int.to.str$ -- 37
+int.to.str$ -- 38
 missing$ -- 10
-newline$ -- 156
+newline$ -- 160
 num.names$ -- 10
-pop$ -- 299
+pop$ -- 307
 preamble$ -- 1
-purify$ -- 82
+purify$ -- 84
 quote$ -- 0
-skip$ -- 286
+skip$ -- 294
 stack$ -- 0
-substring$ -- 185
-swap$ -- 37
+substring$ -- 190
+swap$ -- 38
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 138
-warning$ -- 32
+type$ -- 142
+warning$ -- 33
 while$ -- 10
-width$ -- 39
-write$ -- 276
-(There were 32 warnings)
+width$ -- 40
+write$ -- 283
+(There were 33 warnings)
